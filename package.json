@@ -1,0 +1,35 @@
+{
+  "name": "ebook-management-system",
+  "version": "1.0.0",
+  "description": "Sistema de Gestão de Livros Digitais com Autenticação JWT",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/scripts/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ebook",
+    "jwt",
+    "express",
+    "mongodb",
+    "multer"
+  ],
+  "author": "Dalva Paixão, Hélder Chivambo, Gleides Wanga, Wesley Matlombe,",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1",
+    "express-validator": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

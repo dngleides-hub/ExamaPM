@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= project.name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>eBooks</span>
+            </div>
+            <nav class="nav">
+                <a href="#about">Sobre</a>
+                <a href="#features">Funcionalidades</a>
+                <a href="#team">Equipe</a>
+                <a href="#api">API</a>
+                <a href="/dashboard" class="btn-nav-dashboard">🚀 Testar Sistema</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title"><%= project.name %></h1>
+                <p class="hero-subtitle"><%= project.description %></p>
+                <div class="hero-buttons">
+                    <a href="/dashboard" class="btn btn-primary">🚀 Testar Sistema Agora</a>
+                    <a href="#team" class="btn btn-secondary">Conheça a Equipe</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="book-stack">
+                    <div class="book book-1"></div>
+                    <div class="book book-2"></div>
+                    <div class="book book-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Sobre o Projeto</h2>
+                <p class="section-description">Sistema desenvolvido como projeto final da disciplina de Programação Móvel</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎓</div>
+                    <h3><%= project.course %></h3>
+                    <p><%= project.subject %></p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🏫</div>
+                    <h3><%= project.institution %></h3>
+                    <p>Departamento de TIC</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">📅</div>
+                    <h3>Ano Lectivo</h3>
+                    <p><%= project.year %></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section section-dark">
+            <div class="section-header">
+                <h2 class="section-title">Funcionalidades</h2>
+                <p class="section-description">Principais recursos do sistema</p>
+            </div>
+            <div class="features-grid">
+                <% project.features.forEach(feature => { %>
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <p><%= feature %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Equipe de Desenvolvimento</h2>
+                <p class="section-description">Conheça os membros do grupo</p>
+            </div>
+            <div class="team-grid">
+                <% project.team.forEach((member, index) => { %>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <%= member.name.charAt(0) %>
+                        </div>
+                        <h3 class="team-name"><%= member.name %></h3>
+                        <p class="team-number">Nº <%= member.studentNumber %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+
+        <section id="api" class="section section-dark">
+            <div class="section-header">
+                <h2 class="section-title">Endpoints da API</h2>
+                <p class="section-description">Documentação dos endpoints disponíveis</p>
+            </div>
+            <div class="api-grid">
+                <div class="api-card">
+                    <h3 class="api-title">Autenticação</h3>
+                    <div class="api-endpoint">
+                        <span class="api-method post">POST</span>
+                        <span class="api-path">/api/auth/register</span>
+                    </div>
+                    <div class="api-endpoint">
+                        <span class="api-method post">POST</span>
+                        <span class="api-path">/api/auth/login</span>
+                    </div>
+                    <div class="api-endpoint">
+                        <span class="api-method get">GET</span>
+                        <span class="api-path">/api/auth/profile</span>
+                    </div>
+                </div>
+                <div class="api-card">
+                    <h3 class="api-title">Gestão de Livros</h3>
+                    <div class="api-endpoint">
+                        <span class="api-method post">POST</span>
+                        <span class="api-path">/api/books</span>
+                    </div>
+                    <div class="api-endpoint">
+                        <span class="api-method get">GET</span>
+                        <span class="api-path">/api/books</span>
+                    </div>
+                    <div class="api-endpoint">
+                        <span class="api-method get">GET</span>
+                        <span class="api-path">/api/books/:id</span>
+                    </div>
+                    <div class="api-endpoint">
+                        <span class="api-method delete">DELETE</span>
+                        <span class="api-path">/api/books/:id</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; <%= project.year %> <%= project.institution %>. Todos os direitos reservados.</p>
+            <p>Desenvolvido por: <%= project.team.map(m => m.name).join(', ') %></p>
+        </footer>
+    </div>
+</body>
+</html>

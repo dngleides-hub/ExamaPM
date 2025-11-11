@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de E-books</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">📚 E-books System</div>
+            <a href="/" class="btn-back">← Voltar para Home</a>
+        </header>
+
+        <div class="hero">
+            <h1>Bem-vindo ao Sistema de Gestão de Livros Digitais</h1>
+            <p>Escolha seu perfil para acessar o painel de controle</p>
+        </div>
+
+        <div class="profile-selector">
+            <div class="profile-card admin">
+                <div class="profile-icon">👨‍💼</div>
+                <h2>Painel do Administrador</h2>
+                <p>Gerencie todo o catálogo de livros, faça uploads e controle usuários</p>
+                <ul class="features">
+                    <li>✓ Criar novos livros</li>
+                    <li>✓ Upload de capas e PDFs</li>
+                    <li>✓ Visualizar todos os livros</li>
+                    <li>✓ Deletar livros</li>
+                    <li>✓ Buscar e filtrar</li>
+                </ul>
+                <a href="/admin" class="btn btn-admin">Acessar como Admin</a>
+            </div>
+
+            <div class="profile-card client">
+                <div class="profile-icon">👤</div>
+                <h2>Painel do Cliente</h2>
+                <p>Visualize seus livros, faça buscas e acesse seus e-books favoritos</p>
+                <ul class="features">
+                    <li>✓ Visualizar seus livros</li>
+                    <li>✓ Buscar no catálogo</li>
+                    <li>✓ Filtrar por categoria</li>
+                    <li>✓ Baixar PDFs</li>
+                    <li>✓ Ver detalhes</li>
+                </ul>
+                <a href="/client" class="btn btn-client">Acessar como Cliente</a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>📝 Credenciais de Teste</h3>
+            <div class="credentials">
+                <div class="cred-box">
+                    <strong>Administrador:</strong>
+                    <code>admin@ebooks.com</code> / <code>Admin@123</code>
+                </div>
+                <div class="cred-box">
+                    <strong>Cliente:</strong>
+                    <code>cliente@ebooks.com</code> / <code>Cliente@123</code>
+                </div>
+            </div>
+            <p class="note">💡 Execute <code>npm run seed</code> para criar essas contas automaticamente</p>
+        </div>
+    </div>
+</body>
+</html>

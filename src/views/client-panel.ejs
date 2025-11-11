@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Cliente - Sistema de E-books</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">📚 E-books System - Cliente</div>
+            <div class="header-actions">
+                <span id="userName" class="user-name"></span>
+                <button onclick="logout()" class="btn-logout">Sair</button>
+            </div>
+        </header>
+
+        <div id="loginSection" class="login-section">
+            <div class="login-card">
+                <h2>🔐 Login do Cliente</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" id="loginEmail" value="cliente@ebooks.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha:</label>
+                        <input type="password" id="loginPassword" value="Cliente@123" required>
+                    </div>
+                    <button type="submit" class="btn btn-client">Entrar</button>
+                </form>
+                <p class="help-text">💡 Use as credenciais padrão acima ou crie uma nova conta</p>
+            </div>
+        </div>
+
+        <div id="mainContent" style="display: none;">
+            <div class="welcome-banner">
+                <h2>📚 Minha Biblioteca</h2>
+                <p>Explore seus livros digitais favoritos</p>
+            </div>
+
+            <div class="section-header">
+                <div class="filters">
+                    <input type="text" id="searchInput" placeholder="🔍 Buscar por título, autor...">
+                    <select id="categoryFilter">
+                        <option value="">Todas as categorias</option>
+                    </select>
+                    <button onclick="loadBooks()" class="btn btn-small">Buscar</button>
+                </div>
+            </div>
+
+            <div id="booksList" class="books-grid"></div>
+        </div>
+
+        <div id="messageBox" class="message-box"></div>
+    </div>
+
+    <script src="/js/client.js"></script>
+</body>
+</html>
